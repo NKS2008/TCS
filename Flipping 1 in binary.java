@@ -1,0 +1,22 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String s = Integer.toBinaryString(n);
+        int c = 0;
+        int p = 0;
+        int m = 0;
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == '1') c++;
+            else{
+                m = Math.max(m, c+p+1);
+                p = c;
+                c = 0;
+            }
+        }
+        m = Math.max(m, c+p+1);
+        System.out.println(m);
+    }
+}
+
